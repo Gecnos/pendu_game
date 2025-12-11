@@ -3,7 +3,7 @@ import '../utils/rendu.dart';
 import '../utils/clear.dart'; 
 import '../utils/input.dart'; 
 
-/// Représente l'état et la logique du jeu du Pendu.
+
 class PenduGame {
   final List<String> _possibleWords = ['dart', 'poo', 'flutter', 'algorithme', 'developpement', 'programmation'];
 
@@ -16,21 +16,18 @@ class PenduGame {
   String _statusMessage = ''; 
 
   PenduGame() {
-    // Utilisation de Random pour une meilleure sélection aléatoire
+
 
     final random = Random();
     _secretWord = _possibleWords[random.nextInt(_possibleWords.length)];
     _displayWord = List.filled(_secretWord.length, '_');
   }
 
-  /// Affiche l'état actuel du jeu dans le terminal.
   void _renderGame() {
-    // 1. Nettoyage dynamique du texte
-    clearTerminal(); 
-    
-    // 2. Libellé partie (Affichage du titre)
-    print(" PENDU \n");
 
+    clearTerminal();     
+
+    print(" PENDU \n");
 
     print(getrendu(_remainingChances));
     print('-------------------------------------');
@@ -85,7 +82,6 @@ class PenduGame {
     }
   }
 
-  /// Fonction principale qui contient la boucle de jeu.
   void startGameLoop() {
     while (_remainingChances > 0 && _displayWord.contains('_')) {
 
@@ -101,7 +97,7 @@ class PenduGame {
         _processInput(input);
       } else {
 
-        _statusMessage = 'Entrée non valide (déjà tentée ou format incorrect). Veuillez réessayer.';
+        _statusMessage = 'Entrée non valide. Veuillez réessayer.';
       }
     }
 
@@ -109,7 +105,7 @@ class PenduGame {
     _renderGame(); 
     
     if (!_displayWord.contains('_')) {
-      print("\n🎉 FÉLICITATIONS ! Vous avez trouvé le mot : **$_secretWord**");
+      print("\n FÉLICITATIONS ! Vous avez trouvé le mot : **$_secretWord**");
     } else {
       print("\n PENDU ! Le mot était : **$_secretWord**");
     }
