@@ -1,4 +1,5 @@
 const List<String> rendu = [
+  // 0 : 6 Chances restantes (Poteau seulement)
   '''
   +---+
   |   |
@@ -69,3 +70,11 @@ const List<String> rendu = [
   ========
   '''
 ];
+
+String getrendu(int essainumber){
+   final index = 6 - essainumber;
+   if( index <0 || index >= rendu.length){
+     return rendu[0];
+   }
+   return rendu[index];
+}

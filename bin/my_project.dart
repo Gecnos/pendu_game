@@ -1,6 +1,7 @@
-import '../lib/src/features/pendu_game.dart';
+import '../lib/my_project.dart'; 
 
+/// Fonction principale du programme.
 void main() {
-  PenduGame game = PenduGame();
-  game.start();
+  final game = PenduGame(); 
+  game.startGameLoop(); 
 }
