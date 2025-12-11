@@ -1,0 +1,14 @@
+name: my_project
+description: Un jeu du pendu simple codé en Dart.
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0' # Adaptez la version de l'SDK si nécessaire
+
+# Dépendances (ce projet n'en a pas besoin pour l'instant)
+dependencies:
+  # Pas de dépendances externes
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
