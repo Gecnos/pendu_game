@@ -83,31 +83,30 @@ class PenduGame {
   }
 
   void startGameLoop() {
-    while (_remainingChances > 0 && _displayWord.contains('_')) {
 
-      _renderGame();
+    _renderGame();
+    
+    while (_remainingChances > 0 && _displayWord.contains('_')) {
 
 
       print("\nEntrez une lettre ou le mot complet :");
-      
-
       String? input = getValidInput(_guessedLetters);
 
       if (input != null) {
         _processInput(input);
       } else {
-
         _statusMessage = 'Entrée non valide. Veuillez réessayer.';
       }
+      
+
+      _renderGame();
     }
 
 
-    _renderGame(); 
-    
     if (!_displayWord.contains('_')) {
-      print("\n FÉLICITATIONS ! Vous avez trouvé le mot : **$_secretWord**");
+      print("\nFÉLICITATIONS ! Vous avez trouvé le mot : **$_secretWord**");
     } else {
-      print("\n PENDU ! Le mot était : **$_secretWord**");
+      print("\nPENDU ! Le mot était : **$_secretWord**");
     }
   }
 }
