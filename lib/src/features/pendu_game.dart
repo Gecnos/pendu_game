@@ -5,12 +5,12 @@ import '../utils/input.dart';
 
 
 class PenduGame {
-  final List<String> _possibleWords = ['dart', 'poo', 'flutter', 'algorithme', 'developpement', 'programmation'];
+  final List<String> _possibleWords = ['dart', 'poo', 'flutter', 'algorithme', 'developpement', 'programmation', 'secret','amour','joie','noel'];
 
-  late String _secretWord; 
-  late List<String> _displayWord; 
-  int _remainingChances = 6; 
-  final Set<String> _guessedLetters = {}; 
+  late String _secretWord;// mot secret pris dans la liste 
+  late List<String> _displayWord; //va masquer les mots  
+  int _remainingChances = 6; // le nombre de chance 
+  final Set<String> _guessedLetters = {}; // liste des lettres déjà essayé 
   
 
   String _statusMessage = ''; 
